@@ -1,0 +1,14 @@
+C:\Users\Carlos\Desktop\PD\Git\ProjetoFinal\bin\Debug\ProjetoFinal.exe.config
+C:\Users\Carlos\Desktop\PD\Git\ProjetoFinal\bin\Debug\ProjetoFinal.exe
+C:\Users\Carlos\Desktop\PD\Git\ProjetoFinal\bin\Debug\ProjetoFinal.pdb
+C:\Users\Carlos\Desktop\PD\Git\ProjetoFinal\obj\Debug\ProjetoFinal.csprojAssemblyReference.cache
+C:\Users\Carlos\Desktop\PD\Git\ProjetoFinal\obj\Debug\ProjetoFinal.FormEmpresa.resources
+C:\Users\Carlos\Desktop\PD\Git\ProjetoFinal\obj\Debug\ProjetoFinal.FormEmpresaCadastro.resources
+C:\Users\Carlos\Desktop\PD\Git\ProjetoFinal\obj\Debug\ProjetoFinal.FormPrincipal.resources
+C:\Users\Carlos\Desktop\PD\Git\ProjetoFinal\obj\Debug\ProjetoFinal.FormSimulacoes.resources
+C:\Users\Carlos\Desktop\PD\Git\ProjetoFinal\obj\Debug\ProjetoFinal.Properties.Resources.resources
+C:\Users\Carlos\Desktop\PD\Git\ProjetoFinal\obj\Debug\ProjetoFinal.csproj.GenerateResource.cache
+C:\Users\Carlos\Desktop\PD\Git\ProjetoFinal\obj\Debug\ProjetoFinal.csproj.CoreCompileInputs.cache
+C:\Users\Carlos\Desktop\PD\Git\ProjetoFinal\obj\Debug\ProjetoFinal.exe
+C:\Users\Carlos\Desktop\PD\Git\ProjetoFinal\obj\Debug\ProjetoFinal.pdb
+C:\Users\Carlos\Desktop\PD\Git\ProjetoFinal\obj\Debug\ProjetoFinal.FormSimulacoesCadastro.resources
