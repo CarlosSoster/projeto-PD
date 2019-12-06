@@ -28,7 +28,13 @@ namespace ProjetoFinal
         {
             this.Validate();
             this.empresasBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.projetoFinalDataSet);
+            try
+            {
+                this.tableAdapterManager.UpdateAll(this.projetoFinalDataSet);
+            }catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
 
         }
 

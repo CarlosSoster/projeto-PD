@@ -27,7 +27,14 @@ namespace ProjetoFinal
         {
             this.Validate();
             this.empresasBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.projetoFinalDataSet);
+            try
+            {
+                this.tableAdapterManager.UpdateAll(this.projetoFinalDataSet);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
 
         }
 
@@ -55,6 +62,21 @@ namespace ProjetoFinal
             form.Editar(empresa.EmpresaID);
             form.ShowDialog();
             AtualizaGrid();
+        }
+
+        private void BindingNavigatorDeleteItem_Click(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.empresasBindingSource.EndEdit();
+            try
+            {
+                this.tableAdapterManager.UpdateAll(this.projetoFinalDataSet);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Não foi possível excluir o registro!");
+                AtualizaGrid();
+            }
         }
     }
 }

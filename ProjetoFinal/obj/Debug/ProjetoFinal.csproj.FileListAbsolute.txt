@@ -12,3 +12,4 @@ C:\Users\Carlos\Desktop\PD\Git\ProjetoFinal\obj\Debug\ProjetoFinal.csproj.CoreCo
 C:\Users\Carlos\Desktop\PD\Git\ProjetoFinal\obj\Debug\ProjetoFinal.exe
 C:\Users\Carlos\Desktop\PD\Git\ProjetoFinal\obj\Debug\ProjetoFinal.pdb
 C:\Users\Carlos\Desktop\PD\Git\ProjetoFinal\obj\Debug\ProjetoFinal.FormSimulacoesCadastro.resources
+C:\Users\Carlos\Desktop\PD\Git\ProjetoFinal\obj\Debug\ProjetoFinal.Resultados.resources

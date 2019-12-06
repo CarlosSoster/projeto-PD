@@ -31,5 +31,15 @@ namespace ProjetoFinal
         {
             new FormSimulacoes().ShowDialog();
         }
+
+        private void SairToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void ResultadosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new Resultados().ShowDialog();
+        }
     }
 }

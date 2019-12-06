@@ -31,47 +31,26 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormEmpresa));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.projetoFinalDataSet = new ProjetoFinal.ProjetoFinalDataSet();
-            this.empresasBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.empresasTableAdapter = new ProjetoFinal.ProjetoFinalDataSetTableAdapters.EmpresasTableAdapter();
-            this.tableAdapterManager = new ProjetoFinal.ProjetoFinalDataSetTableAdapters.TableAdapterManager();
             this.empresasBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.empresasBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButtonEditar = new System.Windows.Forms.ToolStripButton();
             this.empresasDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.toolStripButtonEditar = new System.Windows.Forms.ToolStripButton();
-            ((System.ComponentModel.ISupportInitialize)(this.projetoFinalDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.empresasBindingSource)).BeginInit();
+            this.empresasBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.projetoFinalDataSet = new ProjetoFinal.ProjetoFinalDataSet();
+            this.empresasTableAdapter = new ProjetoFinal.ProjetoFinalDataSetTableAdapters.EmpresasTableAdapter();
+            this.tableAdapterManager = new ProjetoFinal.ProjetoFinalDataSetTableAdapters.TableAdapterManager();
             ((System.ComponentModel.ISupportInitialize)(this.empresasBindingNavigator)).BeginInit();
             this.empresasBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.empresasDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.empresasBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.projetoFinalDataSet)).BeginInit();
             this.SuspendLayout();
-            // 
-            // projetoFinalDataSet
-            // 
-            this.projetoFinalDataSet.DataSetName = "ProjetoFinalDataSet";
-            this.projetoFinalDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // empresasBindingSource
-            // 
-            this.empresasBindingSource.DataMember = "Empresas";
-            this.empresasBindingSource.DataSource = this.projetoFinalDataSet;
-            // 
-            // empresasTableAdapter
-            // 
-            this.empresasTableAdapter.ClearBeforeFill = true;
-            // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.EmpresasTableAdapter = this.empresasTableAdapter;
-            this.tableAdapterManager.SimulacoesTableAdapter = null;
-            this.tableAdapterManager.UpdateOrder = ProjetoFinal.ProjetoFinalDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
             // empresasBindingNavigator
             // 
@@ -113,6 +92,7 @@
             this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorDeleteItem.Text = "Delete";
+            this.bindingNavigatorDeleteItem.Click += new System.EventHandler(this.BindingNavigatorDeleteItem_Click);
             // 
             // empresasBindingNavigatorSaveItem
             // 
@@ -123,8 +103,19 @@
             this.empresasBindingNavigatorSaveItem.Text = "Save Data";
             this.empresasBindingNavigatorSaveItem.Click += new System.EventHandler(this.EmpresasBindingNavigatorSaveItem_Click);
             // 
+            // toolStripButtonEditar
+            // 
+            this.toolStripButtonEditar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonEditar.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonEditar.Image")));
+            this.toolStripButtonEditar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonEditar.Name = "toolStripButtonEditar";
+            this.toolStripButtonEditar.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButtonEditar.Text = "Editar";
+            this.toolStripButtonEditar.Click += new System.EventHandler(this.ToolStripButtonEditar_Click);
+            // 
             // empresasDataGridView
             // 
+            this.empresasDataGridView.AllowUserToAddRows = false;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.empresasDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
             this.empresasDataGridView.AutoGenerateColumns = false;
@@ -139,6 +130,7 @@
             this.empresasDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.empresasDataGridView.Location = new System.Drawing.Point(0, 25);
             this.empresasDataGridView.Name = "empresasDataGridView";
+            this.empresasDataGridView.ReadOnly = true;
             this.empresasDataGridView.Size = new System.Drawing.Size(660, 288);
             this.empresasDataGridView.TabIndex = 1;
             this.empresasDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.EmpresasDataGridView_CellContentClick);
@@ -146,23 +138,25 @@
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.DataPropertyName = "EmpresaID";
-            this.dataGridViewTextBoxColumn1.HeaderText = "EmpresaID";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Código";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Width = 84;
+            this.dataGridViewTextBoxColumn1.Width = 65;
             // 
             // dataGridViewTextBoxColumn2
             // 
             this.dataGridViewTextBoxColumn2.DataPropertyName = "RazaoSocial";
-            this.dataGridViewTextBoxColumn2.HeaderText = "RazaoSocial";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Razão Social";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.Width = 92;
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.Width = 95;
             // 
             // dataGridViewTextBoxColumn3
             // 
             this.dataGridViewTextBoxColumn3.DataPropertyName = "CNPJ";
             this.dataGridViewTextBoxColumn3.HeaderText = "CNPJ";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
             this.dataGridViewTextBoxColumn3.Width = 59;
             // 
             // dataGridViewTextBoxColumn4
@@ -170,17 +164,29 @@
             this.dataGridViewTextBoxColumn4.DataPropertyName = "Fone";
             this.dataGridViewTextBoxColumn4.HeaderText = "Fone";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
             this.dataGridViewTextBoxColumn4.Width = 56;
             // 
-            // toolStripButtonEditar
+            // empresasBindingSource
             // 
-            this.toolStripButtonEditar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButtonEditar.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonEditar.Image")));
-            this.toolStripButtonEditar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButtonEditar.Name = "toolStripButtonEditar";
-            this.toolStripButtonEditar.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButtonEditar.Text = "Editar";
-            this.toolStripButtonEditar.Click += new System.EventHandler(this.ToolStripButtonEditar_Click);
+            this.empresasBindingSource.DataMember = "Empresas";
+            this.empresasBindingSource.DataSource = this.projetoFinalDataSet;
+            // 
+            // projetoFinalDataSet
+            // 
+            this.projetoFinalDataSet.DataSetName = "ProjetoFinalDataSet";
+            this.projetoFinalDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // empresasTableAdapter
+            // 
+            this.empresasTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.EmpresasTableAdapter = this.empresasTableAdapter;
+            this.tableAdapterManager.SimulacoesTableAdapter = null;
+            this.tableAdapterManager.UpdateOrder = ProjetoFinal.ProjetoFinalDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
             // FormEmpresa
             // 
@@ -192,12 +198,12 @@
             this.Name = "FormEmpresa";
             this.Text = "FormEmpresa";
             this.Load += new System.EventHandler(this.FormEmpresa_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.projetoFinalDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.empresasBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.empresasBindingNavigator)).EndInit();
             this.empresasBindingNavigator.ResumeLayout(false);
             this.empresasBindingNavigator.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.empresasDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.empresasBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.projetoFinalDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -211,12 +217,12 @@
         private System.Windows.Forms.ToolStripButton bindingNavigatorDeleteItem;
         private System.Windows.Forms.ToolStripButton empresasBindingNavigatorSaveItem;
         private System.Windows.Forms.DataGridView empresasDataGridView;
+        public ProjetoFinalDataSetTableAdapters.EmpresasTableAdapter empresasTableAdapter;
+        public ProjetoFinalDataSet projetoFinalDataSet;
+        private System.Windows.Forms.ToolStripButton toolStripButtonEditar;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        public ProjetoFinalDataSetTableAdapters.EmpresasTableAdapter empresasTableAdapter;
-        public ProjetoFinalDataSet projetoFinalDataSet;
-        private System.Windows.Forms.ToolStripButton toolStripButtonEditar;
     }
 }

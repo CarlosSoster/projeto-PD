@@ -29,18 +29,17 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormEmpresaCadastro));
             System.Windows.Forms.Label empresaIDLabel;
             System.Windows.Forms.Label razaoSocialLabel;
             System.Windows.Forms.Label cNPJLabel;
             System.Windows.Forms.Label foneLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormEmpresaCadastro));
             this.projetoFinalDataSet = new ProjetoFinal.ProjetoFinalDataSet();
             this.empresasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.empresasTableAdapter = new ProjetoFinal.ProjetoFinalDataSetTableAdapters.EmpresasTableAdapter();
             this.tableAdapterManager = new ProjetoFinal.ProjetoFinalDataSetTableAdapters.TableAdapterManager();
             this.empresasBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.empresasBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.empresaIDTextBox = new System.Windows.Forms.TextBox();
             this.razaoSocialTextBox = new System.Windows.Forms.TextBox();
@@ -55,6 +54,42 @@
             ((System.ComponentModel.ISupportInitialize)(this.empresasBindingNavigator)).BeginInit();
             this.empresasBindingNavigator.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // empresaIDLabel
+            // 
+            empresaIDLabel.AutoSize = true;
+            empresaIDLabel.Location = new System.Drawing.Point(28, 44);
+            empresaIDLabel.Name = "empresaIDLabel";
+            empresaIDLabel.Size = new System.Drawing.Size(43, 13);
+            empresaIDLabel.TabIndex = 1;
+            empresaIDLabel.Text = "Código:";
+            // 
+            // razaoSocialLabel
+            // 
+            razaoSocialLabel.AutoSize = true;
+            razaoSocialLabel.Location = new System.Drawing.Point(28, 70);
+            razaoSocialLabel.Name = "razaoSocialLabel";
+            razaoSocialLabel.Size = new System.Drawing.Size(73, 13);
+            razaoSocialLabel.TabIndex = 3;
+            razaoSocialLabel.Text = "Razão Social:";
+            // 
+            // cNPJLabel
+            // 
+            cNPJLabel.AutoSize = true;
+            cNPJLabel.Location = new System.Drawing.Point(28, 96);
+            cNPJLabel.Name = "cNPJLabel";
+            cNPJLabel.Size = new System.Drawing.Size(37, 13);
+            cNPJLabel.TabIndex = 5;
+            cNPJLabel.Text = "CNPJ:";
+            // 
+            // foneLabel
+            // 
+            foneLabel.AutoSize = true;
+            foneLabel.Location = new System.Drawing.Point(28, 122);
+            foneLabel.Name = "foneLabel";
+            foneLabel.Size = new System.Drawing.Size(34, 13);
+            foneLabel.TabIndex = 7;
+            foneLabel.Text = "Fone:";
             // 
             // projetoFinalDataSet
             // 
@@ -82,10 +117,9 @@
             this.empresasBindingNavigator.AddNewItem = this.bindingNavigatorAddNewItem;
             this.empresasBindingNavigator.BindingSource = this.empresasBindingSource;
             this.empresasBindingNavigator.CountItem = null;
-            this.empresasBindingNavigator.DeleteItem = this.bindingNavigatorDeleteItem;
+            this.empresasBindingNavigator.DeleteItem = null;
             this.empresasBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.bindingNavigatorAddNewItem,
-            this.bindingNavigatorDeleteItem,
             this.empresasBindingNavigatorSaveItem});
             this.empresasBindingNavigator.Location = new System.Drawing.Point(0, 0);
             this.empresasBindingNavigator.MoveFirstItem = null;
@@ -107,49 +141,23 @@
             this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorAddNewItem.Text = "Add new";
             // 
-            // bindingNavigatorDeleteItem
-            // 
-            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
-            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
-            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 20);
-            this.bindingNavigatorDeleteItem.Text = "Delete";
-            // 
             // empresasBindingNavigatorSaveItem
             // 
             this.empresasBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.empresasBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("empresasBindingNavigatorSaveItem.Image")));
             this.empresasBindingNavigatorSaveItem.Name = "empresasBindingNavigatorSaveItem";
-            this.empresasBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 23);
+            this.empresasBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 22);
             this.empresasBindingNavigatorSaveItem.Text = "Save Data";
             this.empresasBindingNavigatorSaveItem.Click += new System.EventHandler(this.EmpresasBindingNavigatorSaveItem_Click);
-            // 
-            // empresaIDLabel
-            // 
-            empresaIDLabel.AutoSize = true;
-            empresaIDLabel.Location = new System.Drawing.Point(28, 44);
-            empresaIDLabel.Name = "empresaIDLabel";
-            empresaIDLabel.Size = new System.Drawing.Size(65, 13);
-            empresaIDLabel.TabIndex = 1;
-            empresaIDLabel.Text = "Empresa ID:";
             // 
             // empresaIDTextBox
             // 
             this.empresaIDTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.empresasBindingSource, "EmpresaID", true));
+            this.empresaIDTextBox.Enabled = false;
             this.empresaIDTextBox.Location = new System.Drawing.Point(107, 41);
             this.empresaIDTextBox.Name = "empresaIDTextBox";
             this.empresaIDTextBox.Size = new System.Drawing.Size(100, 20);
             this.empresaIDTextBox.TabIndex = 2;
-            // 
-            // razaoSocialLabel
-            // 
-            razaoSocialLabel.AutoSize = true;
-            razaoSocialLabel.Location = new System.Drawing.Point(28, 70);
-            razaoSocialLabel.Name = "razaoSocialLabel";
-            razaoSocialLabel.Size = new System.Drawing.Size(73, 13);
-            razaoSocialLabel.TabIndex = 3;
-            razaoSocialLabel.Text = "Razao Social:";
             // 
             // razaoSocialTextBox
             // 
@@ -159,15 +167,6 @@
             this.razaoSocialTextBox.Size = new System.Drawing.Size(100, 20);
             this.razaoSocialTextBox.TabIndex = 4;
             // 
-            // cNPJLabel
-            // 
-            cNPJLabel.AutoSize = true;
-            cNPJLabel.Location = new System.Drawing.Point(28, 96);
-            cNPJLabel.Name = "cNPJLabel";
-            cNPJLabel.Size = new System.Drawing.Size(37, 13);
-            cNPJLabel.TabIndex = 5;
-            cNPJLabel.Text = "CNPJ:";
-            // 
             // cNPJTextBox
             // 
             this.cNPJTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.empresasBindingSource, "CNPJ", true));
@@ -175,15 +174,6 @@
             this.cNPJTextBox.Name = "cNPJTextBox";
             this.cNPJTextBox.Size = new System.Drawing.Size(100, 20);
             this.cNPJTextBox.TabIndex = 6;
-            // 
-            // foneLabel
-            // 
-            foneLabel.AutoSize = true;
-            foneLabel.Location = new System.Drawing.Point(28, 122);
-            foneLabel.Name = "foneLabel";
-            foneLabel.Size = new System.Drawing.Size(34, 13);
-            foneLabel.TabIndex = 7;
-            foneLabel.Text = "Fone:";
             // 
             // foneTextBox
             // 
@@ -228,7 +218,6 @@
         private ProjetoFinalDataSetTableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.BindingNavigator empresasBindingNavigator;
         private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorDeleteItem;
         private System.Windows.Forms.ToolStripButton empresasBindingNavigatorSaveItem;
         private System.Windows.Forms.TextBox empresaIDTextBox;
         private System.Windows.Forms.TextBox razaoSocialTextBox;

@@ -43,8 +43,8 @@
             this.viewSimulacoesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.viewSimulacoesTableAdapter = new ProjetoFinal.ProjetoFinalDataSetTableAdapters.ViewSimulacoesTableAdapter();
             this.viewSimulacoesDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SimulacaoID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RazaoSocial = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -99,7 +99,7 @@
             this.simulacoesBindingNavigator.MovePreviousItem = null;
             this.simulacoesBindingNavigator.Name = "simulacoesBindingNavigator";
             this.simulacoesBindingNavigator.PositionItem = null;
-            this.simulacoesBindingNavigator.Size = new System.Drawing.Size(646, 25);
+            this.simulacoesBindingNavigator.Size = new System.Drawing.Size(847, 25);
             this.simulacoesBindingNavigator.TabIndex = 0;
             this.simulacoesBindingNavigator.Text = "bindingNavigator1";
             // 
@@ -153,14 +153,15 @@
             // 
             // viewSimulacoesDataGridView
             // 
+            this.viewSimulacoesDataGridView.AllowUserToAddRows = false;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.viewSimulacoesDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
             this.viewSimulacoesDataGridView.AutoGenerateColumns = false;
             this.viewSimulacoesDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.viewSimulacoesDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.viewSimulacoesDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
+            this.SimulacaoID,
+            this.RazaoSocial,
             this.dataGridViewTextBoxColumn3,
             this.dataGridViewTextBoxColumn4,
             this.dataGridViewTextBoxColumn5,
@@ -172,80 +173,87 @@
             this.viewSimulacoesDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.viewSimulacoesDataGridView.Location = new System.Drawing.Point(0, 25);
             this.viewSimulacoesDataGridView.Name = "viewSimulacoesDataGridView";
-            this.viewSimulacoesDataGridView.Size = new System.Drawing.Size(646, 425);
+            this.viewSimulacoesDataGridView.ReadOnly = true;
+            this.viewSimulacoesDataGridView.Size = new System.Drawing.Size(847, 266);
             this.viewSimulacoesDataGridView.TabIndex = 1;
             // 
-            // dataGridViewTextBoxColumn1
+            // SimulacaoID
             // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "SimulacaoID";
-            this.dataGridViewTextBoxColumn1.HeaderText = "SimulacaoID";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Width = 92;
+            this.SimulacaoID.DataPropertyName = "SimulacaoID";
+            this.SimulacaoID.HeaderText = "Código";
+            this.SimulacaoID.Name = "SimulacaoID";
+            this.SimulacaoID.ReadOnly = true;
+            this.SimulacaoID.Width = 65;
             // 
-            // dataGridViewTextBoxColumn2
+            // RazaoSocial
             // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "EmpresaID";
-            this.dataGridViewTextBoxColumn2.HeaderText = "EmpresaID";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewTextBoxColumn2.Visible = false;
-            this.dataGridViewTextBoxColumn2.Width = 84;
+            this.RazaoSocial.DataPropertyName = "RazaoSocial";
+            this.RazaoSocial.HeaderText = "Razao Social";
+            this.RazaoSocial.Name = "RazaoSocial";
+            this.RazaoSocial.ReadOnly = true;
+            this.RazaoSocial.Width = 87;
             // 
             // dataGridViewTextBoxColumn3
             // 
             this.dataGridViewTextBoxColumn3.DataPropertyName = "RazaoSocial";
             this.dataGridViewTextBoxColumn3.HeaderText = "Empresa";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
             this.dataGridViewTextBoxColumn3.Width = 73;
             // 
             // dataGridViewTextBoxColumn4
             // 
             this.dataGridViewTextBoxColumn4.DataPropertyName = "CustoFixoTotal";
-            this.dataGridViewTextBoxColumn4.HeaderText = "CustoFixoTotal";
+            this.dataGridViewTextBoxColumn4.HeaderText = "Custo Fixo";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.Width = 102;
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            this.dataGridViewTextBoxColumn4.Width = 75;
             // 
             // dataGridViewTextBoxColumn5
             // 
             this.dataGridViewTextBoxColumn5.DataPropertyName = "CustoVarUnit";
-            this.dataGridViewTextBoxColumn5.HeaderText = "CustoVarUnit";
+            this.dataGridViewTextBoxColumn5.HeaderText = "Custo Variável";
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.Width = 94;
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            this.dataGridViewTextBoxColumn5.Width = 92;
             // 
             // dataGridViewTextBoxColumn6
             // 
             this.dataGridViewTextBoxColumn6.DataPropertyName = "PrecoUnit";
-            this.dataGridViewTextBoxColumn6.HeaderText = "PrecoUnit";
+            this.dataGridViewTextBoxColumn6.HeaderText = "Preco Unitário";
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.Width = 79;
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
+            this.dataGridViewTextBoxColumn6.Width = 91;
             // 
             // dataGridViewTextBoxColumn7
             // 
             this.dataGridViewTextBoxColumn7.DataPropertyName = "QtdeVendaInicial";
-            this.dataGridViewTextBoxColumn7.HeaderText = "QtdeVendaInicial";
+            this.dataGridViewTextBoxColumn7.HeaderText = "Quantidade Inicial";
             this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            this.dataGridViewTextBoxColumn7.Width = 113;
+            this.dataGridViewTextBoxColumn7.ReadOnly = true;
+            this.dataGridViewTextBoxColumn7.Width = 107;
             // 
             // dataGridViewTextBoxColumn8
             // 
             this.dataGridViewTextBoxColumn8.DataPropertyName = "QtdeVendaFinal";
-            this.dataGridViewTextBoxColumn8.HeaderText = "QtdeVendaFinal";
+            this.dataGridViewTextBoxColumn8.HeaderText = "Quantidade Final";
             this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
-            this.dataGridViewTextBoxColumn8.Width = 108;
+            this.dataGridViewTextBoxColumn8.ReadOnly = true;
+            this.dataGridViewTextBoxColumn8.Width = 103;
             // 
             // dataGridViewTextBoxColumn9
             // 
             this.dataGridViewTextBoxColumn9.DataPropertyName = "IncrementoUnit";
-            this.dataGridViewTextBoxColumn9.HeaderText = "IncrementoUnit";
+            this.dataGridViewTextBoxColumn9.HeaderText = "Incremento";
             this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
-            this.dataGridViewTextBoxColumn9.Width = 104;
+            this.dataGridViewTextBoxColumn9.ReadOnly = true;
+            this.dataGridViewTextBoxColumn9.Width = 85;
             // 
             // FormSimulacoes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(646, 450);
+            this.ClientSize = new System.Drawing.Size(847, 291);
             this.Controls.Add(this.viewSimulacoesDataGridView);
             this.Controls.Add(this.simulacoesBindingNavigator);
             this.Name = "FormSimulacoes";
@@ -275,9 +283,12 @@
         private System.Windows.Forms.ToolStripButton simulacoesBindingNavigatorSaveItem;
         private System.Windows.Forms.BindingSource viewSimulacoesBindingSource;
         private ProjetoFinalDataSetTableAdapters.ViewSimulacoesTableAdapter viewSimulacoesTableAdapter;
-        private System.Windows.Forms.DataGridView viewSimulacoesDataGridView;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.ToolStripButton toolStripButtonEditar;
+        private System.Windows.Forms.DataGridView viewSimulacoesDataGridView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SimulacaoID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn RazaoSocial;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
@@ -285,6 +296,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
-        private System.Windows.Forms.ToolStripButton toolStripButtonEditar;
     }
 }
